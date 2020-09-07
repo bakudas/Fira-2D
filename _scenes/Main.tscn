@@ -1,0 +1,57 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://src/entities/player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/entities/game_manager.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/entities/caixa_01.tscn" type="PackedScene" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 32, 432 )
+
+[node name="Main" type="Node2D"]
+
+[node name="limites" type="StaticBody2D" parent="."]
+
+[node name="colisor" type="CollisionShape2D" parent="limites"]
+position = Vector2( -32, 432 )
+shape = SubResource( 1 )
+
+[node name="colisor2" type="CollisionShape2D" parent="limites"]
+position = Vector2( 512, 432 )
+shape = SubResource( 1 )
+
+[node name="colisor3" type="CollisionShape2D" parent="limites"]
+position = Vector2( 264, 880 )
+rotation = -1.5708
+shape = SubResource( 1 )
+
+[node name="colisor4" type="CollisionShape2D" parent="limites"]
+position = Vector2( 264, -32 )
+rotation = -1.5708
+shape = SubResource( 1 )
+
+[node name="PropsFG" type="Node2D" parent="."]
+
+[node name="caixa ferro" parent="PropsFG" instance=ExtResource( 3 )]
+position = Vector2( 224, 160 )
+
+[node name="caixa ferro5" parent="PropsFG" instance=ExtResource( 3 )]
+position = Vector2( 160, 160 )
+
+[node name="caixa ferro6" parent="PropsFG" instance=ExtResource( 3 )]
+position = Vector2( 288, 160 )
+
+[node name="game_manager" parent="." instance=ExtResource( 2 )]
+
+[node name="player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 224, 544 )
+
+[node name="PropsBg" type="Node2D" parent="."]
+
+[node name="caixa ferro2" parent="PropsBg" instance=ExtResource( 3 )]
+position = Vector2( 224, 672 )
+
+[node name="caixa ferro3" parent="PropsBg" instance=ExtResource( 3 )]
+position = Vector2( 288, 672 )
+
+[node name="caixa ferro4" parent="PropsBg" instance=ExtResource( 3 )]
+position = Vector2( 160, 672 )

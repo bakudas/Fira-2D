@@ -1,0 +1,40 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Node",
+"class": "Manager",
+"language": "GDScript",
+"path": "res://src/entities/game_manager.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "Player",
+"language": "GDScript",
+"path": "res://src/entities/player.gd"
+} ]
+_global_script_class_icons={
+"Manager": "",
+"Player": ""
+}
+
+[application]
+
+config/name="Fira2D Godot"
+run/main_scene="res://_scenes/Main.tscn"
+config/icon="res://icon.png"
+
+[display]
+
+window/size/width=480
+window/size/height=854
+
+[rendering]
+
+environment/default_environment="res://default_env.tres"
