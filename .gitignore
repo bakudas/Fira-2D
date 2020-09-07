@@ -3,6 +3,8 @@
 .import/
 export.cfg
 export_presets.cfg
+src/assets
+src/audio
 
 # Mono-specific ignores
 .mono/
