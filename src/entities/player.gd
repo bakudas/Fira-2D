@@ -53,23 +53,6 @@ func controls() -> void:
 			
 	velocidade_jogador = velocidade_jogador.normalized() * speed
 
-
-func swipe_controls(direcao) -> void:
-	if get_velocidade_jogador() == Vector2.ZERO:
-		match direcao:
-			"up":
-				velocidade_jogador.y = -10
-				$render.rotation_degrees = -90
-			"down":
-				velocidade_jogador.y = 10
-				$render.rotation_degrees = 90
-			"left":
-				velocidade_jogador.x = -10
-				$render.rotation_degrees = 180
-			"right":
-				velocidade_jogador.x = 10
-				$render.rotation_degrees = 0
-
 		
 # SETGET player estado
 func set_jogador_estado(novo_estado) -> void: 
