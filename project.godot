@@ -36,14 +36,34 @@ config/name="Fira2D Godot"
 run/main_scene="res://_scenes/Main.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Swipe="*res://src/entities/swipe.gd"
+
 [display]
 
 window/size/width=720
 window/size/height=1280
 window/size/resizable=false
+window/size/fullscreen=true
 window/size/test_width=480
 window/size/test_height=854
+window/dpi/allow_hidpi=true
+window/handheld/orientation="portrait"
 window/stretch/mode="2d"
+window/stretch/aspect="keep_width"
+
+[input]
+
+click={
+"deadzone": 0.5,
+"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
+ ]
+}
+
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
 
 [layer_names]
 
