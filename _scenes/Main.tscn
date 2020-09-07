@@ -1,13 +1,16 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://src/entities/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/entities/game_manager.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/entities/caixa_01.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/entities/chave.tscn" type="PackedScene" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 32, 432 )
 
 [node name="Main" type="Node2D"]
+
+[node name="game_manager" parent="." instance=ExtResource( 2 )]
 
 [node name="limites" type="StaticBody2D" parent="."]
 
@@ -40,7 +43,8 @@ position = Vector2( 160, 160 )
 [node name="caixa ferro6" parent="PropsFG" instance=ExtResource( 3 )]
 position = Vector2( 288, 160 )
 
-[node name="game_manager" parent="." instance=ExtResource( 2 )]
+[node name="chave" parent="." instance=ExtResource( 4 )]
+position = Vector2( 224, 232 )
 
 [node name="player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 224, 544 )
@@ -55,3 +59,4 @@ position = Vector2( 288, 672 )
 
 [node name="caixa ferro4" parent="PropsBg" instance=ExtResource( 3 )]
 position = Vector2( 160, 672 )
+[connection signal="chave_coletada" from="chave" to="game_manager" method="_on_chave_chave_coletada"]

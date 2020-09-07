@@ -50,8 +50,9 @@ func controls() -> void:
 			velocidade_jogador.x = 10
 			$render.rotation_degrees = 0
 			
-	velocidade_jogador = velocidade_jogador.normalized() * speed;
+	velocidade_jogador = velocidade_jogador.normalized() * speed
 	
+		
 # SETGET player estado
 func set_jogador_estado(novo_estado) -> void: 
 	jogador_prev_estado = get_jogador_estado()
@@ -74,9 +75,10 @@ func set_velocidade_jogador(nova_velocidade) -> void:
 func get_velocidade_jogador() -> Vector2: return velocidade_jogador
 
 
+func _on_trigger_body_entered(body):
+	pass
 
-
-
-
-
-
+func _on_trigger_area_entered(area):
+	if area.is_in_group("chave"):
+		print_debug("peguei a chave")
+	

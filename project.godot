@@ -9,19 +9,25 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "Node",
-"class": "Manager",
+"base": "Area2D",
+"class": "Key",
 "language": "GDScript",
-"path": "res://src/entities/game_manager.gd"
+"path": "res://src/entities/chave.gd"
 }, {
 "base": "KinematicBody2D",
 "class": "Player",
 "language": "GDScript",
 "path": "res://src/entities/player.gd"
+}, {
+"base": "Node",
+"class": "game_manager",
+"language": "GDScript",
+"path": "res://src/entities/game_manager.gd"
 } ]
 _global_script_class_icons={
-"Manager": "",
-"Player": ""
+"Key": "",
+"Player": "",
+"game_manager": ""
 }
 
 [application]
@@ -34,6 +40,22 @@ config/icon="res://icon.png"
 
 window/size/width=480
 window/size/height=854
+
+[layer_names]
+
+2d_render/layer_1="jogador"
+2d_physics/layer_1="jogador"
+2d_render/layer_2="wall"
+2d_physics/layer_2="wall"
+2d_render/layer_3="obstaculos"
+2d_physics/layer_3="obstaculos"
+2d_render/layer_4="chave"
+2d_physics/layer_4="chave"
+2d_render/layer_5="inimigos"
+2d_physics/layer_5="inimigos"
+2d_render/layer_6="powerups"
+2d_physics/layer_6="powerups"
+2d_physics/jogador=false
 
 [rendering]
 
