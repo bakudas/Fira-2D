@@ -5,7 +5,8 @@ signal chave_coletada
 
 
 func destruir_chave():
-	$sprite.visible = false
+	#$sprite.visible = false
+	queue_free()
 	
 
 func chave_FX():

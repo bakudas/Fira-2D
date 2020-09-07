@@ -194,7 +194,7 @@ position = Vector2( 0, -9.11105 )
 scale = Vector2( 0.335837, 0.337389 )
 frames = SubResource( 33 )
 animation = "IDLE"
-frame = 6
+frame = 5
 playing = true
 [connection signal="area_entered" from="trigger" to="." method="_on_trigger_area_entered"]
 [connection signal="body_entered" from="trigger" to="." method="_on_trigger_body_entered"]

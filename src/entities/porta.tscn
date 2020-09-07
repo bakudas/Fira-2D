@@ -1,6 +1,33 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://src/assets/props/porta-left.png" type="Texture" id=1]
+[ext_resource path="res://src/assets/props/porta-real-direita.png" type="Texture" id=2]
+[ext_resource path="res://src/entities/porta.gd" type="Script" id=3]
 
-[node name="porta-left" type="Sprite"]
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 25.1063, 41.4173 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 10, 39.4151 )
+
+[node name="portal" type="Sprite"]
 texture = ExtResource( 1 )
+script = ExtResource( 3 )
+
+[node name="porta" type="StaticBody2D" parent="."]
+
+[node name="sprite" type="Sprite" parent="porta"]
+position = Vector2( -27.5323, -7.31498 )
+texture = ExtResource( 2 )
+
+[node name="colisor" type="CollisionShape2D" parent="porta"]
+position = Vector2( -30.0339, 6.00679 )
+shape = SubResource( 1 )
+
+[node name="trigger_level" type="Area2D" parent="." groups=[
+"trigger_level",
+]]
+
+[node name="colisor" type="CollisionShape2D" parent="trigger_level"]
+position = Vector2( -10.6787, 7.00791 )
+shape = SubResource( 2 )

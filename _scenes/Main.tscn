@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://src/entities/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/entities/game_manager.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/entities/caixa_01.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/entities/chave.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/entities/porta.tscn" type="PackedScene" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 32, 432 )
@@ -18,7 +19,7 @@ extents = Vector2( 32, 432 )
 position = Vector2( -32, 432 )
 shape = SubResource( 1 )
 
-[node name="colisor2" type="CollisionShape2D" parent="limites"]
+[node name="colisor5" type="CollisionShape2D" parent="limites"]
 position = Vector2( 512, 432 )
 shape = SubResource( 1 )
 
@@ -43,6 +44,9 @@ position = Vector2( 160, 160 )
 [node name="caixa ferro6" parent="PropsFG" instance=ExtResource( 3 )]
 position = Vector2( 288, 160 )
 
+[node name="porta" parent="PropsFG" instance=ExtResource( 5 )]
+position = Vector2( 464, 224 )
+
 [node name="chave" parent="." instance=ExtResource( 4 )]
 position = Vector2( 224, 232 )
 
@@ -59,4 +63,8 @@ position = Vector2( 288, 672 )
 
 [node name="caixa ferro4" parent="PropsBg" instance=ExtResource( 3 )]
 position = Vector2( 160, 672 )
+[connection signal="abrir_porta_level" from="game_manager" to="PropsFG/porta" method="_on_game_manager_abrir_porta_level"]
+[connection signal="body_entered" from="PropsFG/porta/trigger_level" to="game_manager" method="_on_trigger_level_body_entered"]
 [connection signal="chave_coletada" from="chave" to="game_manager" method="_on_chave_chave_coletada"]
+
+[editable path="PropsFG/porta"]
