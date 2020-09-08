@@ -8,8 +8,10 @@ var swipe_direcao
 
 var timer:Timer = Timer.new()
 
+
 func _ready():
 	add_child(timer)
+
 
 func _input(event):
 	if not event is InputEventScreenTouch:
@@ -19,7 +21,7 @@ func _input(event):
 		timer.start(.7)
 	elif not timer.is_stopped():
 		_calculate_swipe(event.position)
-		print_debug("estamos aqui no tempo ")
+
 		
 func _calculate_swipe(swipe_end):
 	timer.stop()

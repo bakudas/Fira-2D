@@ -11,7 +11,9 @@ onready var animator := $render
 
 # chamada quando o jogador entra na cena
 func _ready():
+	# player setup inicial
 	set_jogador_estado(Estado.IDLE)
+	set_velocidade_jogador(Vector2.ZERO)
 	print_debug(jogador_estado)
 
 
