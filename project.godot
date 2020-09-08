@@ -51,15 +51,14 @@ config/icon="res://icon.png"
 [autoload]
 
 Swipe="*res://src/entities/swipe.gd"
-Persistence="*res://_scenes/Persistence.tscn"
 Audiomanager="*res://_scenes/audiomanager.tscn"
+Data="*res://_scenes/Persistence.tscn"
 
 [display]
 
 window/size/width=720
 window/size/height=1280
 window/size/resizable=false
-window/size/fullscreen=true
 window/size/test_width=480
 window/size/test_height=854
 window/dpi/allow_hidpi=true

@@ -1,7 +1,7 @@
 [gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://src/entities/barril.tscn" type="PackedScene" id=1]
-[ext_resource path="res://src/assets/UI/play_2@2x.png" type="Texture" id=2]
+[ext_resource path="res://src/assets/HUD/Buttons/play_2@2x.png" type="Texture" id=2]
 [ext_resource path="res://src/entities/player_menu.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/entities/carrinho.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/entities/porta.tscn" type="PackedScene" id=5]
@@ -9,10 +9,10 @@
 [ext_resource path="res://src/entities/mesa.tscn" type="PackedScene" id=7]
 [ext_resource path="res://src/entities/caixa_01.tscn" type="PackedScene" id=8]
 [ext_resource path="res://src/assets/Logo/logo@2x.png" type="Texture" id=9]
-[ext_resource path="res://src/assets/UI/play@2x.png" type="Texture" id=10]
+[ext_resource path="res://src/assets/HUD/Buttons/play@2x.png" type="Texture" id=10]
 [ext_resource path="res://_scenes/menu.gd" type="Script" id=11]
 [ext_resource path="res://_scenes/Persistence.tscn" type="PackedScene" id=12]
-[ext_resource path="res://src/assets/UI/play_1@2x.png" type="Texture" id=13]
+[ext_resource path="res://src/assets/HUD/Buttons/play_1@2x.png" type="Texture" id=13]
 [ext_resource path="res://_scenes/button.gd" type="Script" id=14]
 
 [sub_resource type="DynamicFontData" id=1]
@@ -44,7 +44,7 @@ script = ExtResource( 11 )
 [node name="tileset" parent="." instance=ExtResource( 6 )]
 z_index = 1
 z_as_relative = false
-tile_data = PoolIntArray( 65535, 0, 0, 1, 1610612749, 0, 2, 1610612749, 0, 3, 1610612751, 0, 4, 1610612749, 0, 5, 19, 0, 7, 1610612749, 0, 8, 1610612749, 0, 9, 1610612749, 0, 10, 536870912, 0, 196607, 1, 0, 131082, 536870913, 0, 262143, 1610612747, 0, 196609, 44, 0, 196610, 58, 0, 196614, 18, 0, 196618, 1073741835, 0, 327679, 1, 0, 262152, 17, 0, 262154, 536870913, 0, 393215, 48, 0, 327681, 63, 0, 327690, 21, 0, 458751, 1, 0, 393223, 63, 0, 524287, 1, 0, 589823, 1, 0, 655359, 536870922, 0, 589826, 63, 0, 589834, 21, 0, 720895, 536870923, 0, 655370, 536870913, 0, 786431, 1, 0, 720904, 58, 0, 720906, 10, 0, 851967, 48, 0, 786442, 536870961, 0, 917503, 1, 0, 983039, 1, 0, 917514, 536870913, 0, 1048575, 1, 0, 983048, 43, 0, 983050, 536870913, 0, 1114111, 536870923, 0, 1048577, 45, 0, 1048586, 11, 0, 1179647, 1, 0, 1114122, 536870913, 0, 1245183, 1, 0, 1179658, 536870913, 0, 1310719, 536870924, 0, 1245185, 13, 0, 1245186, 13, 0, 1245187, 536870927, 0, 1245188, 13, 0, 1245189, 536870926, 0, 1245190, 13, 0, 1245191, 15, 0, 1245192, 13, 0, 1245193, 13, 0, 1245194, 12, 0 )
+tile_data = PoolIntArray( 65535, 0, 0, 1, 1610612749, 0, 2, 1610612749, 0, 3, 1610612751, 0, 4, 1610612749, 0, 5, 19, 0, 7, 1610612749, 0, 8, 1610612749, 0, 9, 1610612749, 0, 10, 536870912, 0, 196607, 1, 0, 131082, 536870913, 0, 262143, 1610612747, 0, 196609, 44, 0, 196610, 58, 0, 196614, 18, 0, 196618, 1073741835, 0, 327679, 1, 0, 262152, 17, 0, 262154, 536870913, 0, 393215, 48, 0, 327690, 21, 0, 458751, 1, 0, 524287, 1, 0, 589823, 1, 0, 655359, 536870922, 0, 589834, 21, 0, 720895, 536870923, 0, 655370, 536870913, 0, 786431, 1, 0, 720904, 58, 0, 720906, 10, 0, 851967, 48, 0, 786442, 536870961, 0, 917503, 1, 0, 983039, 1, 0, 917514, 536870913, 0, 1048575, 1, 0, 983048, 43, 0, 983050, 536870913, 0, 1114111, 536870923, 0, 1048577, 45, 0, 1048586, 11, 0, 1179647, 1, 0, 1114122, 536870913, 0, 1245183, 1, 0, 1179658, 536870913, 0, 1310719, 536870924, 0, 1245185, 13, 0, 1245186, 13, 0, 1245187, 536870927, 0, 1245188, 13, 0, 1245189, 536870926, 0, 1245190, 13, 0, 1245191, 15, 0, 1245192, 13, 0, 1245193, 13, 0, 1245194, 12, 0 )
 
 [node name="porta" parent="." instance=ExtResource( 5 )]
 position = Vector2( 704, 480 )
@@ -62,7 +62,6 @@ z_index = 10
 script = null
 
 [node name="render" parent="player" index="1"]
-frame = 4
 playing = true
 
 [node name="barril" parent="." instance=ExtResource( 1 )]
