@@ -1,19 +1,107 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=15 format=2]
 
-[ext_resource path="res://src/entities/game_manager.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/entities/barril.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/assets/UI/play_2@2x.png" type="Texture" id=2]
+[ext_resource path="res://src/entities/player_menu.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/entities/carrinho.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/entities/porta.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/entities/TileMap_dungeon_01.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/entities/mesa.tscn" type="PackedScene" id=7]
+[ext_resource path="res://src/entities/caixa_01.tscn" type="PackedScene" id=8]
+[ext_resource path="res://src/assets/Logo/logo@2x.png" type="Texture" id=9]
+[ext_resource path="res://src/assets/UI/play@2x.png" type="Texture" id=10]
+[ext_resource path="res://_scenes/menu.gd" type="Script" id=11]
 
-[node name="Main" type="Node2D"]
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://src/assets/fonts/Otsutome_font_ver3/OtsutomeFont_Ver3.ttf"
 
-[node name="game_manager" parent="." instance=ExtResource( 2 )]
-proxima_fase = "res://_scenes/levels/level01.tscn"
+[sub_resource type="DynamicFont" id=2]
+size = 31
+font_data = SubResource( 1 )
+
+[sub_resource type="Theme" id=3]
+default_font = SubResource( 2 )
+
+[node name="Menu" type="Node2D"]
+script = ExtResource( 11 )
 
 [node name="tileset" parent="." instance=ExtResource( 6 )]
 z_index = 1
 z_as_relative = false
-tile_data = PoolIntArray( 65535, 0, 0, 1, 1610612749, 0, 2, 1610612749, 0, 3, 1610612751, 0, 4, 1610612749, 0, 5, 1610612750, 0, 6, 1610612749, 0, 7, 1610612749, 0, 8, 1610612749, 0, 9, 1610612749, 0, 10, 536870912, 0, 196607, 1, 0, 131082, 536870913, 0, 262143, 1610612747, 0, 196618, 1073741835, 0, 327679, 1, 0, 262154, 536870913, 0, 393215, 1, 0, 327690, 21, 0, 458751, 1, 0, 524287, 1, 0, 589823, 1, 0, 655359, 536870922, 0, 589834, 21, 0, 720895, 536870923, 0, 655370, 536870913, 0, 786431, 1, 0, 720906, 10, 0, 851967, 1, 0, 786442, 11, 0, 917503, 1, 0, 851978, 536870913, 0, 983039, 1, 0, 917514, 536870913, 0, 1048575, 1, 0, 983050, 536870913, 0, 1114111, 536870923, 0, 1048586, 11, 0, 1179647, 1, 0, 1114122, 536870913, 0, 1245183, 1, 0, 1179658, 536870913, 0, 1310719, 536870924, 0, 1245185, 13, 0, 1245186, 13, 0, 1245187, 536870927, 0, 1245188, 13, 0, 1245189, 536870926, 0, 1245190, 13, 0, 1245191, 15, 0, 1245192, 13, 0, 1245193, 13, 0, 1245194, 12, 0 )
+tile_data = PoolIntArray( 65535, 0, 0, 1, 1610612749, 0, 2, 1610612749, 0, 3, 1610612751, 0, 4, 1610612749, 0, 5, 19, 0, 7, 1610612749, 0, 8, 1610612749, 0, 9, 1610612749, 0, 10, 536870912, 0, 196607, 1, 0, 131082, 536870913, 0, 262143, 1610612747, 0, 196609, 44, 0, 196610, 58, 0, 196614, 18, 0, 196618, 1073741835, 0, 327679, 1, 0, 262152, 17, 0, 262154, 536870913, 0, 393215, 48, 0, 327681, 63, 0, 327690, 21, 0, 458751, 1, 0, 393223, 63, 0, 524287, 1, 0, 589823, 1, 0, 655359, 536870922, 0, 589826, 63, 0, 589834, 21, 0, 720895, 536870923, 0, 655370, 536870913, 0, 786431, 1, 0, 720904, 58, 0, 720906, 10, 0, 851967, 48, 0, 786442, 536870961, 0, 917503, 1, 0, 983039, 1, 0, 917514, 536870913, 0, 1048575, 1, 0, 983048, 43, 0, 983050, 536870913, 0, 1114111, 536870923, 0, 1048577, 45, 0, 1048586, 11, 0, 1179647, 1, 0, 1114122, 536870913, 0, 1245183, 1, 0, 1179658, 536870913, 0, 1310719, 536870924, 0, 1245185, 13, 0, 1245186, 13, 0, 1245187, 536870927, 0, 1245188, 13, 0, 1245189, 536870926, 0, 1245190, 13, 0, 1245191, 15, 0, 1245192, 13, 0, 1245193, 13, 0, 1245194, 12, 0 )
 
 [node name="porta" parent="." instance=ExtResource( 5 )]
 position = Vector2( 704, 480 )
-[connection signal="abrir_porta_level" from="game_manager" to="porta" method="_on_game_manager_abrir_porta_level"]
+
+[node name="logo2x" type="Sprite" parent="."]
+position = Vector2( 352, 560 )
+scale = Vector2( 1.28636, 1.28636 )
+z_index = 1
+texture = ExtResource( 9 )
+
+[node name="player" parent="." instance=ExtResource( 3 )]
+position = Vector2( 248, 376 )
+scale = Vector2( 3.94624, 3.94624 )
+z_index = 10
+script = null
+
+[node name="render" parent="player" index="1"]
+frame = 4
+playing = true
+
+[node name="barril" parent="." instance=ExtResource( 1 )]
+position = Vector2( 104, 160 )
+scale = Vector2( 1.24009, 1.24009 )
+z_index = 1
+
+[node name="barril2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 96, 984 )
+scale = Vector2( 1.24009, 1.24009 )
+z_index = 1
+
+[node name="caixa" parent="." instance=ExtResource( 8 )]
+position = Vector2( 600, 920 )
+scale = Vector2( 1.34199, 1.34199 )
+
+[node name="mesa" parent="." instance=ExtResource( 7 )]
+position = Vector2( 496, 160 )
+scale = Vector2( 1.49683, 1.49683 )
+z_index = 1
+
+[node name="carrinho" parent="." instance=ExtResource( 4 )]
+position = Vector2( 104, 1176 )
+scale = Vector2( 1.33828, 1.33828 )
+z_index = 1
+
+[node name="creditos" type="Label" parent="."]
+margin_left = 240.0
+margin_top = 1160.0
+margin_right = 459.0
+margin_bottom = 1208.0
+theme = SubResource( 3 )
+text = "a game by bakudas"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Play_button" type="TextureButton" parent="."]
+margin_left = 240.0
+margin_top = 760.0
+margin_right = 1371.0
+margin_bottom = 2006.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_scale = Vector2( 0.200115, 0.200115 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+toggle_mode = true
+texture_normal = ExtResource( 10 )
+texture_pressed = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Play_button" to="." method="_on_Play_button_pressed"]
+
+[editable path="player"]

@@ -1,61 +1,61 @@
 [gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://src/entities/barril.tscn" type="PackedScene" id=1]
-[ext_resource path="res://src/entities/game_manager.tscn" type="PackedScene" id=2]
-[ext_resource path="res://src/entities/caixa_01.tscn" type="PackedScene" id=3]
-[ext_resource path="res://src/entities/chave.tscn" type="PackedScene" id=4]
-[ext_resource path="res://src/entities/porta.tscn" type="PackedScene" id=5]
-[ext_resource path="res://src/entities/TileMap_dungeon_01.tscn" type="PackedScene" id=6]
-[ext_resource path="res://src/entities/tutorial.tscn" type="PackedScene" id=7]
-[ext_resource path="res://src/entities/Transition.tscn" type="PackedScene" id=8]
-[ext_resource path="res://src/entities/player spawner.tscn" type="PackedScene" id=9]
+[ext_resource path="res://src/entities/Transition.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/entities/player spawner.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/entities/barril.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/entities/TileMap_dungeon_01.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/entities/tutorial.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/entities/caixa_01.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/entities/game_manager.tscn" type="PackedScene" id=7]
+[ext_resource path="res://src/entities/chave.tscn" type="PackedScene" id=8]
+[ext_resource path="res://src/entities/porta.tscn" type="PackedScene" id=9]
 
 [node name="Main" type="Node2D"]
 
-[node name="Transition" parent="." instance=ExtResource( 8 )]
+[node name="Transition" parent="." instance=ExtResource( 1 )]
 position = Vector2( 360, 640 )
 
-[node name="game_manager" parent="." instance=ExtResource( 2 )]
-proxima_fase = "res://_scenes/levels/level01.tscn"
+[node name="game_manager" parent="." instance=ExtResource( 7 )]
+proxima_fase = "res://_scenes/levels/level2.tscn"
 
-[node name="tileset" parent="." instance=ExtResource( 6 )]
+[node name="tileset" parent="." instance=ExtResource( 4 )]
 z_index = 1
 z_as_relative = false
 tile_data = PoolIntArray( 65535, 0, 0, 1, 1610612749, 0, 2, 1610612749, 0, 3, 1610612751, 0, 4, 1610612749, 0, 5, 1610612750, 0, 6, 1610612749, 0, 7, 1610612749, 0, 8, 1610612749, 0, 9, 1610612749, 0, 10, 536870912, 0, 196607, 1, 0, 131073, 536870957, 0, 131074, 536870956, 0, 131082, 536870913, 0, 262143, 1610612747, 0, 196610, 536870959, 0, 196618, 1073741835, 0, 327679, 1, 0, 262148, 536870958, 0, 262154, 536870913, 0, 393215, 1, 0, 327690, 21, 0, 458751, 1, 0, 524287, 1, 0, 458757, 27, 0, 458758, 25, 0, 458759, 25, 0, 458760, 25, 0, 458761, 536870976, 0, 589823, 1, 0, 524293, 23, 0, 655359, 536870922, 0, 589829, 23, 0, 589834, 21, 0, 720895, 536870923, 0, 655365, 23, 0, 655370, 536870913, 0, 786431, 1, 0, 720901, 23, 0, 720906, 10, 0, 851967, 1, 0, 786434, 536870956, 0, 786437, 536870976, 0, 786442, 11, 0, 917503, 1, 0, 851978, 536870913, 0, 983039, 1, 0, 917512, 536870958, 0, 917514, 536870913, 0, 1048575, 1, 0, 983050, 536870913, 0, 1114111, 536870923, 0, 1048583, 536870955, 0, 1048586, 11, 0, 1179647, 1, 0, 1114122, 536870913, 0, 1245183, 1, 0, 1179653, 1610612782, 0, 1179658, 536870913, 0, 1310719, 536870924, 0, 1245185, 13, 0, 1245186, 13, 0, 1245187, 536870927, 0, 1245188, 13, 0, 1245189, 536870926, 0, 1245190, 13, 0, 1245191, 15, 0, 1245192, 13, 0, 1245193, 13, 0, 1245194, 12, 0 )
 
 [node name="PropsFG" type="Node2D" parent="."]
 
-[node name="caixa ferro" parent="PropsFG" instance=ExtResource( 3 )]
+[node name="caixa ferro" parent="PropsFG" instance=ExtResource( 6 )]
 position = Vector2( 352, 416 )
 
-[node name="barril" parent="PropsFG" instance=ExtResource( 1 )]
+[node name="barril" parent="PropsFG" instance=ExtResource( 3 )]
 position = Vector2( 288, 416 )
 
-[node name="caixa ferro6" parent="PropsFG" instance=ExtResource( 3 )]
+[node name="caixa ferro6" parent="PropsFG" instance=ExtResource( 6 )]
 position = Vector2( 416, 416 )
 
-[node name="porta" parent="PropsFG" instance=ExtResource( 5 )]
+[node name="porta" parent="PropsFG" instance=ExtResource( 9 )]
 position = Vector2( 704, 480 )
 
-[node name="chave" parent="." instance=ExtResource( 4 )]
+[node name="chave" parent="." instance=ExtResource( 8 )]
 position = Vector2( 352, 488 )
 z_index = 10
 
-[node name="player spawner" parent="." instance=ExtResource( 9 )]
+[node name="player spawner" parent="." instance=ExtResource( 2 )]
 position = Vector2( 352, 800 )
 z_index = 10
 
 [node name="PropsBg" type="Node2D" parent="."]
 z_index = 2
 
-[node name="caixa ferro2" parent="PropsBg" instance=ExtResource( 3 )]
+[node name="caixa ferro2" parent="PropsBg" instance=ExtResource( 6 )]
 position = Vector2( 352, 928 )
 
-[node name="caixa ferro3" parent="PropsBg" instance=ExtResource( 3 )]
+[node name="caixa ferro3" parent="PropsBg" instance=ExtResource( 6 )]
 position = Vector2( 608, 552 )
 z_index = 1
 
-[node name="tutorial" parent="." instance=ExtResource( 7 )]
+[node name="tutorial" parent="." instance=ExtResource( 5 )]
 position = Vector2( 480, 768 )
 scale = Vector2( 0.397912, 0.397912 )
 [connection signal="abrir_porta_level" from="game_manager" to="PropsFG/porta" method="_on_game_manager_abrir_porta_level"]
