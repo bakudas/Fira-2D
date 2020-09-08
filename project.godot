@@ -9,10 +9,20 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Node",
+"class": "JSONBeautifier",
+"language": "GDScript",
+"path": "res://addons/json_beautifier/json_beautifier.gd"
+}, {
 "base": "Area2D",
 "class": "Key",
 "language": "GDScript",
 "path": "res://src/entities/chave.gd"
+}, {
+"base": "Node",
+"class": "Persistence",
+"language": "GDScript",
+"path": "res://addons/PersistenceNode/persistence_node.gd"
 }, {
 "base": "KinematicBody2D",
 "class": "Player",
@@ -25,7 +35,9 @@ _global_script_classes=[ {
 "path": "res://src/entities/game_manager.gd"
 } ]
 _global_script_class_icons={
+"JSONBeautifier": "",
 "Key": "",
+"Persistence": "res://addons/PersistenceNode/icon.png",
 "Player": "",
 "game_manager": ""
 }
@@ -33,12 +45,14 @@ _global_script_class_icons={
 [application]
 
 config/name="Fira2D Godot"
-run/main_scene="res://_scenes/levels/level1.tscn"
+run/main_scene="res://_scenes/menu.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
 Swipe="*res://src/entities/swipe.gd"
+Persistence="*res://_scenes/Persistence.tscn"
+Audiomanager="*res://_scenes/audiomanager.tscn"
 
 [display]
 

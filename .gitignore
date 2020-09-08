@@ -3,11 +3,15 @@
 .import/
 export.cfg
 export_presets.cfg
+hardisk_original.png
+icon.png
 src/assets
 src/audio
 addons/
 build/
 android/
+Tests/
+
 
 # Mono-specific ignores
 .mono/

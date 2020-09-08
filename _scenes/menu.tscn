@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://src/entities/barril.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/assets/UI/play_2@2x.png" type="Texture" id=2]
@@ -11,6 +11,9 @@
 [ext_resource path="res://src/assets/Logo/logo@2x.png" type="Texture" id=9]
 [ext_resource path="res://src/assets/UI/play@2x.png" type="Texture" id=10]
 [ext_resource path="res://_scenes/menu.gd" type="Script" id=11]
+[ext_resource path="res://_scenes/Persistence.tscn" type="PackedScene" id=12]
+[ext_resource path="res://src/assets/UI/play_1@2x.png" type="Texture" id=13]
+[ext_resource path="res://_scenes/button.gd" type="Script" id=14]
 
 [sub_resource type="DynamicFontData" id=1]
 font_path = "res://src/assets/fonts/Otsutome_font_ver3/OtsutomeFont_Ver3.ttf"
@@ -21,6 +24,19 @@ font_data = SubResource( 1 )
 
 [sub_resource type="Theme" id=3]
 default_font = SubResource( 2 )
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ ExtResource( 10 ), ExtResource( 13 ), ExtResource( 2 ), ExtResource( 2 ), ExtResource( 10 ) ],
+"loop": false,
+"name": "pressed",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 10 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+} ]
 
 [node name="Menu" type="Node2D"]
 script = ExtResource( 11 )
@@ -86,22 +102,15 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Play_button" type="TextureButton" parent="."]
-margin_left = 240.0
-margin_top = 760.0
-margin_right = 1371.0
-margin_bottom = 2006.0
-grow_horizontal = 2
-grow_vertical = 2
-rect_scale = Vector2( 0.200115, 0.200115 )
-size_flags_horizontal = 3
-size_flags_vertical = 3
-toggle_mode = true
-texture_normal = ExtResource( 10 )
-texture_pressed = ExtResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-[connection signal="pressed" from="Play_button" to="." method="_on_Play_button_pressed"]
+[node name="Persistence" parent="." instance=ExtResource( 12 )]
+debug_on = false
+
+[node name="button" type="AnimatedSprite" parent="."]
+position = Vector2( 352, 864 )
+scale = Vector2( 0.198055, 0.198055 )
+frames = SubResource( 4 )
+animation = "idle"
+script = ExtResource( 14 )
+[connection signal="animation_finished" from="button" to="." method="_on_button_animation_finished"]
 
 [editable path="player"]
