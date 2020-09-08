@@ -61,7 +61,8 @@ scale = Vector2( 3.94624, 3.94624 )
 z_index = 10
 script = null
 
-[node name="render" parent="player" index="1"]
+[node name="render" parent="player" index="0"]
+frame = 1
 playing = true
 
 [node name="barril" parent="." instance=ExtResource( 1 )]
