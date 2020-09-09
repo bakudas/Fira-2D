@@ -1,0 +1,104 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://src/assets/HUD/Rank/Stars_Back_two.png" type="Texture" id=1]
+[ext_resource path="res://src/assets/HUD/Rank/Stars_Back_three.png" type="Texture" id=2]
+[ext_resource path="res://src/assets/HUD/Level/Menu_Grey.png" type="Texture" id=3]
+[ext_resource path="res://src/assets/HUD/Level/Menu_Victory_Banner.png" type="Texture" id=4]
+[ext_resource path="res://src/assets/HUD/Level/Title_Quest_Orange.png" type="Texture" id=5]
+[ext_resource path="res://src/assets/HUD/Rank/Stars_Back.png" type="Texture" id=6]
+[ext_resource path="res://src/assets/HUD/Rank/Stars_Back_left.png" type="Texture" id=7]
+[ext_resource path="res://src/assets/HUD/Buttons/play_2@2x.png" type="Texture" id=8]
+[ext_resource path="res://src/assets/HUD/Buttons/exit@2x.png" type="Texture" id=9]
+[ext_resource path="res://src/assets/HUD/Buttons/play@2x.png" type="Texture" id=10]
+
+[sub_resource type="GDScript" id=6]
+script/source = "extends Node2D
+
+
+func _ready():
+	pass
+
+
+func _on_TextureButton_pressed():
+	visible = false
+"
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "2",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "0",
+"speed": 5.0
+} ]
+
+[node name="HUD_level_select" type="Node2D"]
+script = SubResource( 6 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -8.0
+margin_right = 736.0
+margin_bottom = 1304.0
+color = Color( 0, 0, 0, 0.52549 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HUD_level_select" type="Sprite" parent="."]
+position = Vector2( 360, 592 )
+texture = ExtResource( 3 )
+
+[node name="Menu_Victory_Banner" type="Sprite" parent="."]
+position = Vector2( 360, 544 )
+scale = Vector2( 0.587805, 0.587805 )
+texture = ExtResource( 4 )
+
+[node name="Title_Quest_Orange" type="Sprite" parent="Menu_Victory_Banner"]
+position = Vector2( 0, -217.759 )
+scale = Vector2( 0.7722, 0.7722 )
+texture = ExtResource( 5 )
+
+[node name="stars" type="AnimatedSprite" parent="."]
+position = Vector2( 360, 560 )
+scale = Vector2( 0.588889, 0.588889 )
+z_index = 100
+frames = SubResource( 3 )
+animation = "3"
+
+[node name="exit" type="TextureButton" parent="."]
+margin_left = 552.0
+margin_top = 336.0
+margin_right = 1682.0
+margin_bottom = 1583.0
+rect_scale = Vector2( 0.0906981, 0.0906981 )
+texture_normal = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="play" type="TextureButton" parent="."]
+margin_left = 248.0
+margin_top = 664.0
+margin_right = 1379.0
+margin_bottom = 1910.0
+rect_scale = Vector2( 0.201339, 0.201339 )
+texture_normal = ExtResource( 10 )
+texture_pressed = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="exit" to="." method="_on_TextureButton_pressed"]
